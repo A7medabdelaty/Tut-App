@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tut_app/presentation/login/login_view.dart';
 import 'package:tut_app/presentation/main/main_view.dart';
+import 'package:tut_app/presentation/onboarding/onboarding_view.dart';
 import 'package:tut_app/presentation/register/register_view.dart';
 import 'package:tut_app/presentation/splash/splash_view.dart';
 import 'package:tut_app/presentation/store_details/store_details_view.dart';
@@ -12,16 +13,21 @@ class Routes {
   static const String mainRoute = "/main";
   static const String loginRoute = "/login";
   static const String registerRoute = "/register";
+  static const String onBoardingRoute = "/onBoarding";
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String storeDetailsRoute = "/storeDetails";
 }
 
-class RoutesManager {
+class RoutesGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(
           builder: (context) => const SplashView(),
+        );
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(
+          builder: (context) => const OnBoardingView(),
         );
 
       case Routes.mainRoute:
